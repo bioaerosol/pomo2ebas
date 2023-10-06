@@ -1,0 +1,6 @@
+debian/debhelper-build-stamp
+debian/files
+debian/pomo2ebas.debhelper.log
+debian/pomo2ebas.substvars
+debian/.debhelper
+debian/pomo2ebas
