@@ -1,6 +1,6 @@
 name: Build Debian Package
 
-on: [release]
+on: [workflow_call]
 
 permissions:
   contents: read
@@ -14,3 +14,5 @@ jobs:
         with:
           buildpackage-opts: --build=binary --no-sign
           source-dir: src
+          before-build-hook: debchange --controlmaint -i "Test"
+          extra-build-deps: devscripts git
