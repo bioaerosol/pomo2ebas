@@ -1,0 +1,69 @@
+name: Release Debian Package
+
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+jobs:
+  create-tag:
+    permissions: 
+      contents: write
+    runs-on: ubuntu-latest
+    outputs:
+      tag-version: ${{ steps.get_version.outputs.version }}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Debian tools
+      run: sudo apt-get install -y dpkg-dev
+
+    - name: Get version from debian/changelog
+      id: get_version
+      run: |
+        cd src 
+        echo "version=$(dpkg-parsechangelog --show-field Version)" >> $GITHUB_OUTPUT
+
+    - name: Create tag
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git tag -a v${{ steps.get_version.outputs.version }} -m "Version ${{ steps.get_version.outputs.version }}"
+
+    - name: Push tag
+      run: git push origin v${{ steps.get_version.outputs.version }}
+
+  build-package:
+    needs: create-tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: "v${{ needs.create-tag.outputs.tag-version }}"
+      - uses: jtdor/build-deb-action@v1
+        with:
+          buildpackage-opts: --build=binary --no-sign
+          source-dir: src
+      - uses: actions/cache@v3
+        with:
+          path: debian/artifacts
+          key: artifacts-${{ github.run_id }}
+
+  create-release:
+    permissions: 
+      contents: write
+    needs: [ create-tag, build-package ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: "v${{ needs.create-tag.outputs.tag-version }}"
+      - uses: actions/cache@v3
+        with:
+          path: debian/artifacts
+          key: artifacts-${{ github.run_id }}
+      - uses: ncipollo/release-action@v1
+        with:
+          tag: "v${{ needs.create-tag.outputs.tag-version }}"
+          artifacts: "debian/artifacts/*.deb"
