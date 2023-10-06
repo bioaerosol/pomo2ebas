@@ -1,0 +1,15 @@
+name: Build Debian Package
+
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  build-debs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: jtdor/build-deb-action@v1
+        with:
+          buildpackage-opts: --build=binary --no-sign
