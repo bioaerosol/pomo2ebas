@@ -8,6 +8,8 @@ export PYBUILD_NAME=pomo2ebas
 %:
 	dh $@ --with python3 --system=pybuild
 
+override_dh_install:
+	dh_install src/scripts/* /usr/bin
 
 # If you need to rebuild the Sphinx documentation
 # Add spinxdoc to the dh --with line
