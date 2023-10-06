@@ -1,6 +1,6 @@
 name: Build Debian Package
 
-on: [push]
+on: [release]
 
 permissions:
   contents: read
@@ -13,3 +13,4 @@ jobs:
       - uses: jtdor/build-deb-action@v1
         with:
           buildpackage-opts: --build=binary --no-sign
+          source-dir: src
