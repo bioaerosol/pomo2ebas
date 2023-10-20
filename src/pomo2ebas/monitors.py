@@ -6,7 +6,7 @@ Reads from xml or imput files for each station
 
 import xml.etree.ElementTree as ElementTree
 from dateutil.parser import parse
-from pollen import Pollen_Concentration
+from .pollen import Pollen_Concentration
 
 
 class BAA500(object):
