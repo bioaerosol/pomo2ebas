@@ -1,12 +1,11 @@
 import yaml
-from config import Defaults
+
 
 
 class Stations(object):
     """ It imports from yaml a list of stations and allows to manage them. """
-    def __init__(self):
-        self.defaults = Defaults()
-        self.yaml_path = self.defaults.get_default("Config","stations_yaml_path")
+    def __init__(self, config_file: str):
+        self.yaml_path = config_file
         self.stations = self.__get_stations()        
         
     def __get_stations(self):
