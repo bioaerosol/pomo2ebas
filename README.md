@@ -2,8 +2,8 @@
 Debian package with tools that convert Hund BAA500 data files to EBAS Nasa Ames file format.
 
 # Requirements
-Python 3
-EBAS Lib
+Python 3 and 
+EBAS Lib. Use the folowing command to install EBAS lib.
 ```
 pip install  ebas_io-4.1.0-py3-none-any.whl
 ```
