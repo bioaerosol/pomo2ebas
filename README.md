@@ -1,6 +1,13 @@
 # pomo2ebas
 Debian package with tools that convert Hund BAA500 data files to EBAS Nasa Ames file format.
 
+# Requirements
+Python 3
+EBAS Lib
+```
+pip install  ebas_io-4.1.0-py3-none-any.whl
+```
+
 # Installation
 To install latest release provide a GitHub PAT as environment variable $GITHUBPAT
 ```
