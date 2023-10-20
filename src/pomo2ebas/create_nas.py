@@ -9,14 +9,14 @@ from monitors import BAA500
 from pollen import get_station_pollen_list_object,get_station_pollen_list,set_prediction_pollen_vlues
 from nas import Nas
 import sys
+from config import Defaults
 
-
+defaults = Defaults(config_file="etc/pomo2ebas/defaults.yaml")
+stations = Stations(config_file="etc/pomo2ebas/stations.yaml")
 
 # create objects
 baa500 = BAA500()
-nas = Nas()
-# yaml stations
-stations = Stations()
+nas = Nas(timezone=defaults.get_default("Config", "timezone"), datalevel=defaults.get_default("Config", "datalevel"), project=defaults.get_default("Config", "projects"))
 
 # load station from yaml
 station = stations.get_station_by_name("pomo")
