@@ -1,0 +1,49 @@
+<Analyse_Datensatz>
+  <Konzentrationsliste>
+    <Konzentrationsinformation Deutscher_Name_Pollenart="Erle" Lateinischer_Name_Pollenart="Alnus" Pollenanzahl="5" Pollenkonzentration="153125.0"/>
+  </Konzentrationsliste>
+  <Pollenliste Lateinischer_Name_Pollenart="Alnus">
+    <Polle Probenbild="polle-im_01_10_13-20200222120004-pmon-00013-A102181-tiff.tif" Qualitaetsmass="98.55" x_Ortskoordinate="947" y_Ortskoordinate="229" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_13-20200222120004-pmon-00013-A102181-tiff.tif" Qualitaetsmass="97.64" x_Ortskoordinate="105" y_Ortskoordinate="403" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_13-20200222120004-pmon-00013-A102181-tiff.tif" Qualitaetsmass="99.94" x_Ortskoordinate="457" y_Ortskoordinate="415" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_13-20200222120004-pmon-00013-A102181-tiff.tif" Qualitaetsmass="99.95" x_Ortskoordinate="1001" y_Ortskoordinate="561" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_13-20200222120004-pmon-00013-A102181-tiff.tif" Qualitaetsmass="95.24" x_Ortskoordinate="141" y_Ortskoordinate="601" z_Ortskoordinate="35"/>
+  </Pollenliste>
+  <WMO-Stationsnummer>00013</WMO-Stationsnummer>
+  <Beginn_der_Funktionskontrolle>20200222120004</Beginn_der_Funktionskontrolle>
+  <Ende_der_Funktionskontrolle>20200222150004</Ende_der_Funktionskontrolle>
+  <Beginn_der_Probenahme>20200222120004</Beginn_der_Probenahme>
+  <Ende_der_Probenahme>20200222150004</Ende_der_Probenahme>
+  <Probenahmezeit>10</Probenahmezeit>
+  <Probentraeger-ID>A102181</Probentraeger-ID>
+  <Status_Gesamtsystem>OK</Status_Gesamtsystem>
+  <Status_Betriebsspannung>OK</Status_Betriebsspannung>
+  <Status_Elektrik>OK</Status_Elektrik>
+  <Status_Elektronik>OK</Status_Elektronik>
+  <Temperatur_im_Gehaeuse>0</Temperatur_im_Gehaeuse>
+  <Luftfeuchte_im_Gehaeuse>0</Luftfeuchte_im_Gehaeuse>
+  <Taupunkt_im_Gehaeuse>-nan(ind)</Taupunkt_im_Gehaeuse>
+  <Status_Lichtquellen>OK</Status_Lichtquellen>
+  <Status_Mikroskopkamera>OK</Status_Mikroskopkamera>
+  <Status_Probenahme>OK</Status_Probenahme>
+  <Status_Probenaufbereitung>OK</Status_Probenaufbereitung>
+  <Status_Auswertung>OK</Status_Auswertung>
+  <Status_Transportsystem_der_Proben>OK</Status_Transportsystem_der_Proben>
+  <Anzahl_der_beprobten_Probentraeger>90</Anzahl_der_beprobten_Probentraeger>
+  <Anzahl_der_unbeprobten_Probentraeger>80</Anzahl_der_unbeprobten_Probentraeger>
+  <Status_Magazinwechsel_erforderlich>NO</Status_Magazinwechsel_erforderlich>
+  <Status_Pumpe>OK</Status_Pumpe>
+  <Status_Netzpannungsausfall>NO</Status_Netzpannungsausfall>
+  <Status_Heizung>OK</Status_Heizung>
+  <Status_Mikroskop>OK</Status_Mikroskop>
+  <Betriebsstunden_Gesamtsystem>22784.9</Betriebsstunden_Gesamtsystem>
+  <Betriebsstunden_Pumpe>802.769</Betriebsstunden_Pumpe>
+  <Betriebsstunden_Lichtquellen>0</Betriebsstunden_Lichtquellen>
+  <Anzahl_gescannte_Bilder>1</Anzahl_gescannte_Bilder>
+  <Anzahl_Partikel>44</Anzahl_Partikel>
+  <Device>TestDevice</Device>
+  <Name_SW>PomoAI</Name_SW>
+  <Version_PomoAI>v1.3.0.1</Version_PomoAI>
+  <Version_Segmentierer>v0.3.0</Version_Segmentierer>
+  <Version_Klassifikator>v2.1</Version_Klassifikator>
+</Analyse_Datensatz>
