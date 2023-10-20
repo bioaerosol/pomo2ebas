@@ -2,8 +2,15 @@ src/debian/debhelper-build-stamp
 src/debian/files
 src/debian/pomo2ebas.debhelper.log
 src/debian/pomo2ebas.substvars
-src/debian/.debhelper
+src/debian/*.debhelper
 src/debian/pomo2ebas
 pomo2ebas_*.deb
 pomo2ebas_*.buildinfo
 pomo2ebas_*.changes
+
+.spyproject
+.venv
+.vscode
+
+**/__pycache__/
+**/*.egg-info

@@ -1,13 +1,12 @@
 # pomo2ebas
 Debian package with tools that convert Hund BAA500 data files to EBAS Nasa Ames file format.
 
-# Requirements
-Python 3 and 
-EBAS Lib. Use the folowing command to install EBAS lib.
+# Requirements for Local Setup
+To develop and start this software locally, you need Python 3 and the EBAS Lib. EBAS lib can be installed with:
 ```
-pip install  src/ebas-lib/ebas_io-4.1.0-py3-none-any.whl
+pip install  usr/share/pomo2ebas/ebas_io-4.1.0-py3-none-any.whl
 ```
-For more information about EBAS package please visit https://git.nilu.no/ebas/ebas-io/-/wikis/home
+For more information about EBAS package please visit https://git.nilu.no/ebas/ebas-io/-/wikis/home.
 
 # Installation
 To install latest release provide a GitHub PAT as environment variable $GITHUBPAT
