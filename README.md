@@ -7,6 +7,7 @@ EBAS Lib. Use the folowing command to install EBAS lib.
 ```
 pip install  ebas-lib/ebas_io-4.1.0-py3-none-any.whl
 ```
+For more information about EBAS package please visit https://git.nilu.no/ebas/ebas-io/-/wikis/home
 
 # Installation
 To install latest release provide a GitHub PAT as environment variable $GITHUBPAT
