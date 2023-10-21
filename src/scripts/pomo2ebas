@@ -1,17 +1,23 @@
 #!/usr/bin/env python3
 
 """
-
-The main section reads pollen predictions from xml and converts them to EbasNasaAmes file format.
-        
+The main section reads pollen predictions from xml and converts them to EbasNasaAmes file format.      
 """
 import sys
+import argparse
 
 from pomo2ebas import Stations, BAA500, Nas, Defaults
 from pomo2ebas import get_station_pollen_list_object,get_station_pollen_list,set_prediction_pollen_vlues
 
-defaults = Defaults(config_file="etc/pomo2ebas/defaults.yaml")
-stations = Stations(config_file="etc/pomo2ebas/stations.yaml")
+parser = argparse.ArgumentParser(description="""Reads a POMO XML form STDIN and transform the contained data to EBAS BAS Nasa Ames file format to STDOUT.""")
+
+parser.add_argument("--defaultsConfig", help="Path to defaults configuration file; defaults to /etc/pomo2ebas/defaults.yaml", action="store", required=False, default="/etc/pomo2ebas/defaults.yaml")
+parser.add_argument("--stationsConfig", help="Path to stations configuration file; defaults to /etc/pomo2ebas/stations.yaml", action="store", required=False, default="/etc/pomo2ebas/stations.yaml")
+
+args = parser.parse_args()
+
+defaults = Defaults(config_file=args.defaultsConfig)
+stations = Stations(config_file=args.stationsConfig)
 
 # create objects
 baa500 = BAA500()
