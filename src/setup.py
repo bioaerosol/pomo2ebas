@@ -9,7 +9,7 @@ setup(
     packages=find_packages(where="."),
     package_dir={"pomo2ebas": "./pomo2ebas"},
     install_requires=[
-       
+       "pyyaml==6.0.1"
     ],
     tests_require=[],
     version=pomo2ebas.__version__,
