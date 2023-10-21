@@ -9,7 +9,7 @@ import argparse
 from pomo2ebas import Stations, BAA500, Nas, Defaults
 from pomo2ebas import get_station_pollen_list_object,get_station_pollen_list,set_prediction_pollen_vlues
 
-parser = argparse.ArgumentParser(description="""Reads a POMO XML form STDIN and transform the contained data to EBAS BAS Nasa Ames file format to STDOUT.""")
+parser = argparse.ArgumentParser(description="""Reads a POMO XML from STDIN and transform the contained data to EBAS BAS Nasa Ames file format which is written to STDOUT.""")
 
 parser.add_argument("--defaultsConfig", help="Path to defaults configuration file; defaults to /etc/pomo2ebas/defaults.yaml", action="store", required=False, default="/etc/pomo2ebas/defaults.yaml")
 parser.add_argument("--stationsConfig", help="Path to stations configuration file; defaults to /etc/pomo2ebas/stations.yaml", action="store", required=False, default="/etc/pomo2ebas/stations.yaml")
