@@ -191,7 +191,7 @@ class Nas(object):
             None
         """
         # write the file:
-        self.nas.write(createfiles=True)
+        self.nas.write(createfiles=False)
         # createfiles=True
         #     Actually creates output files, else the output would go to STDOUT.
         # You can also specify:
