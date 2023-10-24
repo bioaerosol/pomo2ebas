@@ -14,6 +14,9 @@ parser = argparse.ArgumentParser(description="""Reads a POMO XML from STDIN and 
 parser.add_argument("--defaultsConfig", help="Path to defaults configuration file; defaults to /etc/pomo2ebas/defaults.yaml", action="store", required=False, default="/etc/pomo2ebas/defaults.yaml")
 parser.add_argument("--stationsConfig", help="Path to stations configuration file; defaults to /etc/pomo2ebas/stations.yaml", action="store", required=False, default="/etc/pomo2ebas/stations.yaml")
 
+#parser.add_argument("--defaultsConfig", help="Path to defaults configuration file; defaults to /etc/pomo2ebas/defaults.yaml", action="store", required=False, default=r"C:\Users\Tofahito\Desktop\ZAUM\EBAS\python\project\EBAS\etc\pomo2ebas\defaults.yaml")
+#parser.add_argument("--stationsConfig", help="Path to stations configuration file; defaults to /etc/pomo2ebas/stations.yaml", action="store", required=False, default=r"C:\Users\Tofahito\Desktop\ZAUM\EBAS\python\project\EBAS\etc\pomo2ebas\stations.yaml")
+
 args = parser.parse_args()
 
 defaults = Defaults(config_file=args.defaultsConfig)
@@ -40,7 +43,7 @@ pollen_predicted_list = baa500.get_predicted_pollen_list(io_wrapper, pollen_simp
 pollen_object_list = get_station_pollen_list_object(pollen_list)
 
 # Set file global metadata for the EbasNasaAmes file object
-nas.set_fileglobal_metadata(station)
+nas.set_fileglobal_metadata(station, pollen_predicted_list)
 
 # set prediction start and end date and time
 sample_times = [(pollen_predicted_list["start"], pollen_predicted_list["end"])]

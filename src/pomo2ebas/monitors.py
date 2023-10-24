@@ -7,7 +7,6 @@ Reads from xml or imput files for each station
 import xml.etree.ElementTree as ElementTree
 from dateutil.parser import parse
 from .pollen import Pollen_Concentration
-import datetime
 import pytz
 
 class BAA500(object):
@@ -64,6 +63,7 @@ class BAA500(object):
 
         start = root.find("./Beginn_der_Probenahme")
         end = root.find("./Ende_der_Probenahme")
+        instr_name = root.find("./WMO-Stationsnummer")
 
         pollen = {}
 
@@ -76,7 +76,7 @@ class BAA500(object):
         d = {}
         d["start"] = BAA500.timestamp_to_datetime(self,start.text)
         d["end"] = BAA500.timestamp_to_datetime(self,end.text)
+        d["instr_name"] = "POMO_BAA500_" + instr_name.text
         d["pollen"] = pollen
-            
         return d
         

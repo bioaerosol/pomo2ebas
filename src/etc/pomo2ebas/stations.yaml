@@ -3,13 +3,12 @@ stations:
     - station:
         name: "pomo"
         description: "Munich Biedersteiner"
-        instr_name: "POMO_BAA500"
         station_code: "DE0203U"
         lab_code: "DE60L"
         method: "DE60L_FIT"
         instr_type: "pollen_monitor"
         matrix: "aerosol"
-        revdesc: "versionumer"
+        revdesc: "1.46.13981"
         resolution: "3h"
         unit: "1/m3"
         org:
@@ -152,9 +151,8 @@ stations:
             - Zea_mays: "pollen_zea_mays"
             - Quercus_ilex: "pollen_quercus_ilex"     
     - station:
-       name: "testing example"
+       name: "This is just a testing example"
        description: "Munich Biedersteiner"
-       instr_name: "POMO"
        station_code: "DE0203U"
        lab_code: "DE60L"
        method: "DE60L_XXX"
