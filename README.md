@@ -48,7 +48,7 @@ The application is configured by two files:
 To develop and start this software locally, you need Python 3 and the EBAS Lib. EBAS lib can be installed with:
 
 ```
-pip install  src/usr/share/pomo2ebas/ebas_io-4.1.0-py3-none-any.whl
+pip install src/usr/share/pomo2ebas/ebas_io-4.1.0-py3-none-any.whl
 ```
 
 You may switch to your local environment if you are using one.
