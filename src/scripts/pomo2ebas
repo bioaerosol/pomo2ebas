@@ -11,11 +11,9 @@ from pomo2ebas import get_station_pollen_list_object,get_station_pollen_list,set
 
 parser = argparse.ArgumentParser(description="""Reads a POMO XML from STDIN and transform the contained data to EBAS BAS Nasa Ames file format which is written to STDOUT.""")
 
+# add parser arguments; if you like to run locally with some other yaml locations, just call the script with --defaultsConfig and --stationsConfig parameters
 parser.add_argument("--defaultsConfig", help="Path to defaults configuration file; defaults to /etc/pomo2ebas/defaults.yaml", action="store", required=False, default="/etc/pomo2ebas/defaults.yaml")
 parser.add_argument("--stationsConfig", help="Path to stations configuration file; defaults to /etc/pomo2ebas/stations.yaml", action="store", required=False, default="/etc/pomo2ebas/stations.yaml")
-
-#parser.add_argument("--defaultsConfig", help="Path to defaults configuration file; defaults to /etc/pomo2ebas/defaults.yaml", action="store", required=False, default=r"C:\Users\Tofahito\Desktop\ZAUM\EBAS\python\project\EBAS\etc\pomo2ebas\defaults.yaml")
-#parser.add_argument("--stationsConfig", help="Path to stations configuration file; defaults to /etc/pomo2ebas/stations.yaml", action="store", required=False, default=r"C:\Users\Tofahito\Desktop\ZAUM\EBAS\python\project\EBAS\etc\pomo2ebas\stations.yaml")
 
 args = parser.parse_args()
 
@@ -23,11 +21,13 @@ defaults = Defaults(config_file=args.defaultsConfig)
 stations = Stations(config_file=args.stationsConfig)
 
 # create objects
-baa500 = BAA500()
+baa500 = BAA500(sys.stdin)
 nas = Nas(timezone=defaults.get_default("Config", "timezone"), datalevel=defaults.get_default("Config", "datalevel"), project=defaults.get_default("Config", "projects"))
 
 # load station from yaml
-station = stations.get_station_by_name("pomo")
+station = stations.get_station_by_id(baa500.get_device_id())
+if (station is None):
+    raise Exception("Station with id {0} not found in configuration".format(baa500.get_device_id()))
 
 # load station pollen list from yaml
 pollen_list = station["pollens"]
@@ -36,14 +36,13 @@ pollen_list = station["pollens"]
 pollen_simple_list = get_station_pollen_list(pollen_list)
 
 # read station predictions from io_weapper (prompt or input)
-io_wrapper = sys.stdin
-pollen_predicted_list = baa500.get_predicted_pollen_list(io_wrapper, pollen_simple_list)
+pollen_predicted_list = baa500.get_predicted_pollen_list(pollen_simple_list)
 
 # convert pollen list into a list of pollen objects of type Pollen
 pollen_object_list = get_station_pollen_list_object(pollen_list)
 
 # Set file global metadata for the EbasNasaAmes file object
-nas.set_fileglobal_metadata(station, pollen_predicted_list)
+nas.set_fileglobal_metadata(station)
 
 # set prediction start and end date and time
 sample_times = [(pollen_predicted_list["start"], pollen_predicted_list["end"])]

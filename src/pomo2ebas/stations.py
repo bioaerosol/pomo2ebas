@@ -17,10 +17,10 @@ class Stations(object):
         """ Returns a dict of stations""" 
         return self.stations
     
-    def get_station_by_name(self, name):
-     """ Returns the station with the given Name or None if no such station exists. """
+    def get_station_by_id(self, id: str):
+     """ Returns the station with the given ID or None if no such station exists. """
      for station in self.stations:
-         if(station["station"]["name"] == name):
+         if(station["station"]["id"] == id):
              return station["station"]
      return None
  

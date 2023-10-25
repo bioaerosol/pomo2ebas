@@ -13,7 +13,7 @@ class Nas(object):
         self.project = project
         self.nas = EbasNasaAmes()
 
-    def set_fileglobal_metadata(self, station, pollen_predicted_list):
+    def set_fileglobal_metadata(self, station):
         """
         Set file global metadata for the EbasNasaAmes file object
 
@@ -42,7 +42,7 @@ class Nas(object):
         self.nas.metadata.instr_type = station["instr_type"]
 
         # We must alter the name whenever we make significant modifications to our data intake. such as a novel processing algorithm.
-        self.nas.metadata.instr_name = pollen_predicted_list["instr_name"]
+        self.nas.metadata.instr_name = station["instr_name"]
         self.nas.metadata.matrix = station["matrix"]
         self.nas.metadata.revdesc = station["revdesc"]
         self.nas.metadata.projects = [self.project]  # the same as framework
