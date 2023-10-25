@@ -14,7 +14,6 @@ override_dh_auto_clean:
 	rm -rf build
 
 override_dh_auto_build:
-	pip3 install -r requirements.txt
 	dh_python3
 	dh_auto_build
 	python3 setup.py build

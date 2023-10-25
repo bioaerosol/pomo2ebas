@@ -45,7 +45,7 @@ jobs:
         with:
           buildpackage-opts: --build=binary --no-sign
           source-dir: src
-          extra-build-deps: python3-pip
+          extra-build-deps: python3-tz python3-yaml
       - uses: actions/cache@v3
         with:
           path: debian/artifacts
