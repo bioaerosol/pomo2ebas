@@ -43,6 +43,7 @@ jobs:
           ref: "v${{ needs.create-tag.outputs.tag-version }}"
       - uses: jtdor/build-deb-action@v1
         with:
+          docker-image: ubuntu:jammy
           buildpackage-opts: --build=binary --no-sign
           source-dir: src
           extra-build-deps: python3-pip python3-tz python3-yaml python3-dateutil
