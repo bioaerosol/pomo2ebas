@@ -11,6 +11,7 @@ setup(
     install_requires=[
        "pyyaml==6.0.1",
        "pytz==2023.3.post1"
+       "dateutil==2.8.2"
     ],
     tests_require=[],
     version=pomo2ebas.__version__,
