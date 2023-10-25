@@ -12,7 +12,6 @@ import pytz
 class BAA500(object):
     """ Concrete implementation for Hund monitor BAA500. """
 
-    @staticmethod
     def timestamp_to_datetime(self, timestamp: str):
         """ Returns a given timestamp string from BAA500 XML file as a datetime (for example datetime.datetime(2023, 9, 10, 3, 0, 3)). """
         ts = parse(timestamp)
@@ -74,8 +73,8 @@ class BAA500(object):
                 pollen[pollen_name] = Pollen_Concentration(float(konzentration.get("Pollenkonzentration")),accuracy)
 
         d = {}
-        d["start"] = BAA500.timestamp_to_datetime(self,start.text)
-        d["end"] = BAA500.timestamp_to_datetime(self,end.text)
+        d["start"] = self.timestamp_to_datetime(start.text)
+        d["end"] = self.timestamp_to_datetime(end.text)
         d["instr_name"] = "POMO_BAA500_" + instr_name.text
         d["pollen"] = pollen
         return d
