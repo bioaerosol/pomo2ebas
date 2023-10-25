@@ -16,6 +16,7 @@ override_dh_auto_clean:
 override_dh_auto_build:
 	dh_python3
 	dh_auto_build
+	pip3 install usr/share/pomo2ebas/ebas_io-4.1.0-py3-none-any.whl
 	python3 setup.py build
 
 override_dh_auto_install:
