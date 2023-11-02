@@ -11,9 +11,9 @@ References:
 
 # Usage
 ## Download
-To install latest release provide a GitHub PAT as environment variable $GITHUBPAT
+To install latest release provide a GitHub PAT as environment variable $GITHUBPAT (as long as this repo is not public)
 ```
-$GITHUBPAT=<PAT>
+GITHUBPAT=<PAT>
 ```
 and then download latest release using this command:
 ```
