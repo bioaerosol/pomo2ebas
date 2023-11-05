@@ -2,7 +2,6 @@
 stations:
     - station:
         id: "00025"
-        name: "pomo"
         description: "Munich Biedersteiner"
         station_code: "DE0203U"
         lab_code: "DE60L"
