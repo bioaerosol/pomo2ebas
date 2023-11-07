@@ -135,11 +135,16 @@ class Nas(object):
         # might consider using a fixed resolution code for those time series.
         # Automatic calculation (will work from ebas.io V.3.0.7):
         # nas.metadata.resolution = estimate_resolution_code(self.nas.sample_times)
-        self.nas.metadata.resolution = station["resolution"]
 
         # avgs between start times.
         # or set it hardcoded:
         # self.nas.metadata.resolution = '3mo' or self.nas.metadata.resolution = '3h'
+
+        # The sample resolution is defined in ebas as the average time between two consecutive sample start times.
+        # In the NRT dataflow you create usually files with only one sample. In this case, the automatic calculation with estimate_resolution_code would result in an undefined resolution code (the algorithm makes only sense if there are many samples).
+        # That’s why you’d need to hardcode the resolution (because you know that the next sample will start 3 hours later, ebas-io can not deduct this information from one single sample).
+        
+        self.nas.metadata.resolution = station["resolution"]
 
         # It's a good practice to use Jan 1st of the year of the first sample
         # endtime as the file reference date (zero point of time axes).
