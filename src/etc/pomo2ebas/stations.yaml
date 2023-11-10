@@ -12,6 +12,7 @@ stations:
         revdesc: "1.46.13981"
         resolution: "3h"
         unit: "1/m3"
+        timezone: "Europe/Berlin"
         org:
             OR_CODE: "DE60L"
             OR_NAME: "Zentrum Allergie und Umwelt"
@@ -163,6 +164,7 @@ stations:
        revdesc: "versionumer"
        resolution: "3h"
        unit: "1/m3"
+       timezone: "Europe/Madrid"
        org:
            OR_CODE: "DE60L"
            OR_NAME: "Zentrum Allergie und Umwelt"

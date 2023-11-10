@@ -36,7 +36,7 @@ pollen_list = station["pollens"]
 pollen_simple_list = get_station_pollen_list(pollen_list)
 
 # read station predictions from io_weapper (prompt or input)
-pollen_predicted_list = baa500.get_predicted_pollen_list(pollen_simple_list)
+pollen_predicted_list = baa500.get_predicted_pollen_list(pollen_simple_list,from_timezone=station["timezone"], to_timezone=defaults.get_default("Config", "timezone") )
 
 # convert pollen list into a list of pollen objects of type Pollen
 pollen_object_list = get_station_pollen_list_object(pollen_list)

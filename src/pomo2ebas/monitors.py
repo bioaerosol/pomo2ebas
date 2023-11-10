@@ -25,7 +25,7 @@ class BAA500(object):
 
         self.xml_root = ElementTree.fromstring(xml)
 
-    def timestamp_to_datetime(self, timestamp: str):
+    def timestamp_to_datetime(self, timestamp: str, from_timezone, to_timezone):
         """Returns a given timestamp string from BAA500 XML file as a datetime (for example datetime.datetime(2023, 9, 10, 3, 0, 3))."""
         ts = parse(timestamp)
         
@@ -35,7 +35,7 @@ class BAA500(object):
             
         ts = ts.replace(second=0)
 
-        ts = self.convert_datetime_timezone(ts, "Europe/Berlin", "UTC")
+        ts = self.convert_datetime_timezone(ts, from_timezone, to_timezone)
         ts = parse(ts)
         return ts
 
@@ -64,7 +64,7 @@ class BAA500(object):
     def get_device_id(self) -> str:
         return self.xml_root.find("./WMO-Stationsnummer").text
 
-    def get_predicted_pollen_list(self, station_pollen_list):
+    def get_predicted_pollen_list(self, station_pollen_list, from_timezone, to_timezone):
         """Transforms whatevers comes from given io_wrapper to pollen list with measurments."""
 
         start = self.xml_root.find("./Beginn_der_Probenahme")
@@ -79,8 +79,8 @@ class BAA500(object):
                 pollen[pollen_name] = Pollen_Concentration(float(konzentration.get("Pollenkonzentration")), accuracy)
 
         d = {}
-        d["start"] = self.timestamp_to_datetime(start.text)
-        d["end"] = self.timestamp_to_datetime(end.text)
+        d["start"] = self.timestamp_to_datetime(start.text, from_timezone, to_timezone)
+        d["end"] = self.timestamp_to_datetime(end.text, from_timezone, to_timezone)
         d["pollen"] = pollen
 
         return d
