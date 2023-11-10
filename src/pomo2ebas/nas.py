@@ -37,6 +37,7 @@ class Nas(object):
         # Station metadata
         self.nas.metadata.datalevel = self.datalevel  # live data
         self.nas.metadata.station_code = station["station_code"]
+        self.nas.metadata.station_name = station["station_name"]
         self.nas.metadata.lab_code = station["lab_code"]
         self.nas.metadata.method = station["method"]  # should start with lab code
         self.nas.metadata.instr_type = station["instr_type"]
