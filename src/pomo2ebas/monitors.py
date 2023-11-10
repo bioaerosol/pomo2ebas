@@ -28,6 +28,13 @@ class BAA500(object):
     def timestamp_to_datetime(self, timestamp: str):
         """Returns a given timestamp string from BAA500 XML file as a datetime (for example datetime.datetime(2023, 9, 10, 3, 0, 3))."""
         ts = parse(timestamp)
+        
+        # Sometime, the instrument writes as start time "10:00:03" or "10:01:10" we set minutes and seconds back to 0 
+        if ts.time().minute <= 10:
+            ts = ts.replace(minute=0)
+            
+        ts = ts.replace(second=0)
+
         ts = self.convert_datetime_timezone(ts, "Europe/Berlin", "UTC")
         ts = parse(ts)
         return ts
