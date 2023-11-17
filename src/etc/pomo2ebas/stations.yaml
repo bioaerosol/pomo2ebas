@@ -9,7 +9,6 @@ stations:
         instr_name: "BAA502"
         matrix: "aerosol"
         revdesc: "1.46.13981"
-        resolution: "3h"
         unit: "1/m3"
         org:
             OR_CODE: "DE60L"
@@ -159,7 +158,6 @@ stations:
        instr_name: "BAA500"
        matrix: "aerosol"
        revdesc: "versionumer"
-       resolution: "3h"
        unit: "1/m3"
        org:
            OR_CODE: "DE60L"

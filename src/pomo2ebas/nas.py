@@ -12,6 +12,26 @@ class Nas(object):
         self.datalevel = datalevel
         self.project = project
         self.nas = EbasNasaAmes()
+        
+    def estimate_resolution(self, start, end):
+        """
+        Estimates the resolution in hours.
+        We only estimate 3 and 24 hours for winter and summer time switching
+        Parameters:
+           start and end datetime
+        Returns:
+            resiolution in hours
+        """
+        total_sec = (end - start).total_seconds()
+        total_min = (total_sec / 60)
+         
+        if (total_min <= 240):
+         return '{}h'.format(3)
+         
+        if (total_min > 240):
+         return '{}h'.format(24) 
+        
+        return None        
 
     def set_fileglobal_metadata(self, station):
         """
@@ -113,11 +133,11 @@ class Nas(object):
 
         # define start and end times for all samples
         self.nas.sample_times = sample_times
-
+        
         # period code is an estimate of the current submissions period, so it should
         # always be calculated from the actual time axes.
         self.nas.metadata.period = estimate_period_code(self.nas.sample_times[0][0], self.nas.sample_times[-1][1])
-
+        
         # Is the whole time covered in this file
         # Sample duration can be set automatically
         self.nas.metadata.duration = estimate_sample_duration_code(self.nas.sample_times)
@@ -144,7 +164,7 @@ class Nas(object):
         # In the NRT dataflow you create usually files with only one sample. In this case, the automatic calculation with estimate_resolution_code would result in an undefined resolution code (the algorithm makes only sense if there are many samples).
         # That’s why you’d need to hardcode the resolution (because you know that the next sample will start 3 hours later, ebas-io can not deduct this information from one single sample).
         
-        self.nas.metadata.resolution = station["resolution"]
+        self.nas.metadata.resolution = self.estimate_resolution(sample_times[0][0],sample_times[-1][1])
 
         # It's a good practice to use Jan 1st of the year of the first sample
         # endtime as the file reference date (zero point of time axes).
@@ -216,3 +236,6 @@ class Nas(object):
         #     flag column per variable.
         #     This is a trade-off between the advantages and disadvantages of the
         #     above mentioned approaches.
+
+
+    
