@@ -49,7 +49,14 @@ class BAA500(object):
         return dt
 
     def measure_accuracy(self, pollen_name):
-        """It measures the qualitaet mass or accuracy average"""
+        """
+        This funtion measures the qualitaet mass or accuracy average.
+        It simply adds the total accuracy for all identified particles of the same kind 
+        and divides it by the number of the same detected particles.
+        
+        The resulting number is then multiplied by the value of the concentration of the same kind and devided by 100
+        Uncertainty is calculated this way if this uncertintay is related to the measurment value.
+        """
         for pollen in self.xml_root.findall("./Pollenliste"):
             pollenname = pollen.get("Lateinischer_Name_Pollenart")
             if pollenname == pollen_name:
