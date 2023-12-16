@@ -1,3 +1,2 @@
 #!/bin/bash
-export export PYTHONPATH="/mnt/c/Users/Tofahito/Documents/GitHub/pomo2ebas/src/"
-cat ../test/testdata/polle-ad_01-20200222120004-pmon-00013-A102181-xml.xml | python3.6 ../src/scripts/pomo2ebas --stationsConfig ../src/etc/pomo2ebas/stations.yaml --defaultsConfig ../src/etc/pomo2ebas/defaults.yaml
+cat ../test/testdata/polle-ad_01-20200222120004-pmon-00013-A102181-xml.xml | ../src/scripts/pomo2ebas --stationsConfig ../src/etc/pomo2ebas/stations.yaml --defaultsConfig ../src/etc/pomo2ebas/defaults.yaml
