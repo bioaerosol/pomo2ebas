@@ -1,3 +1,9 @@
+pomo2ebas (0.0.1-1ubuntu1) UNRELEASED; urgency=medium
+
+  * Tiny bug fixes.
+
+ -- Robert Gebauer <robert.gebauer@gmx.de>  Sat, 16 Dec 2023 21:08:54 +0100
+
 pomo2ebas (0.0.1-1) UNRELASED; urgency=low
 
   * Initial build and release
