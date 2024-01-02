@@ -1,8 +1,10 @@
-pomo2ebas (0.0.1-1ubuntu1) UNRELEASED; urgency=medium
+pomo2ebas (0.0.1-1ubuntu2) UNRELEASED; urgency=medium
 
+  [ Robert Gebauer ]
   * Tiny bug fixes.
+  * Added support for multiple projects.
 
- -- Robert Gebauer <robert.gebauer@gmx.de>  Sat, 16 Dec 2023 21:08:54 +0100
+ -- Robert Gebauer <robert.gebauer@gmx.de>  Tue, 02 Jan 2024 09:50:25 +0100
 
 pomo2ebas (0.0.1-1) UNRELASED; urgency=low
 
