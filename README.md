@@ -33,7 +33,7 @@ The application is configured by two files:
 | --- | --- |
 | Config.timezone | Timezone of timestamps in output. Defaults to UTC. |
 | Config.datalevel | Data level of output. Please refer to [EBAS Data Submission Manual](https://ebas-submit.nilu.no/templates/Bioaerosols/lev2) for more details. Defaults to 1.5 (NRT) |
-| Config.projects | Project to which the transformed data should be assigned to. |
+| Config.projects | List of projects (aka EBAS framework) to which the transformed data should be assigned to. |
 
 ### Stations
 ```/etc/pomo2ebas/stations.yaml``` contains a detailed list of stations with their meta information which is needed to build output:

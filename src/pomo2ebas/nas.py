@@ -7,10 +7,10 @@ from ebas.io.file.nasa_ames import EbasNasaAmes
 class Nas(object):
     """Store that holds a list of stations and allows to manage them."""
 
-    def __init__(self, timezone: str, datalevel: str, project: str):
+    def __init__(self, timezone: str, datalevel: str, projects: list):
         self.timezone = timezone
         self.datalevel = datalevel
-        self.project = project
+        self.projects = projects
         self.nas = EbasNasaAmes()
         
     def estimate_resolution(self, start, end):
@@ -65,7 +65,7 @@ class Nas(object):
         self.nas.metadata.instr_name = station["instr_name"]
         self.nas.metadata.matrix = station["matrix"]
         self.nas.metadata.revdesc = station["revdesc"]
-        self.nas.metadata.projects = [self.project]  # the same as framework
+        self.nas.metadata.projects = self.projects  # the same as framework
 
         # Data Originator Organisation
         self.nas.metadata.org = DataObject(
