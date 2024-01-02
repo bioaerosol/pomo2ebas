@@ -1,0 +1,4 @@
+Config:
+    timezone: "UTC"
+    datalevel: "1.5"
+    projects: "SAMPLE"

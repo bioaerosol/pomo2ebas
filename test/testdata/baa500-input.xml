@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Analyse_Datensatz>
+  <!-- Sample synthetic file; does not contain all elements an original file has. -->
+  <Konzentrationsliste>
+    <Konzentrationsinformation Deutscher_Name_Pollenart="Varia" Lateinischer_Name_Pollenart="Varia" Pollenanzahl="1" Pollenkonzentration="4.0184838928095985" />
+    <Konzentrationsinformation Deutscher_Name_Pollenart="Alternaria" Lateinischer_Name_Pollenart="Alternaria" Pollenanzahl="3" Pollenkonzentration="12.055451678428794" />
+    <Konzentrationsinformation Deutscher_Name_Pollenart="NoPollen" Lateinischer_Name_Pollenart="NoPollen" Pollenanzahl="2048" Pollenkonzentration="8229.855012474058" />
+    <Konzentrationsinformation Deutscher_Name_Pollenart="Sporen" Lateinischer_Name_Pollenart="Fungus" Pollenanzahl="2" Pollenkonzentration="8.036967785619197" />
+  </Konzentrationsliste>
+  <Pollenliste Lateinischer_Name_Pollenart="Varia">
+    <Polle x_Ortskoordinate="742" y_Ortskoordinate="327" z_Ortskoordinate="35" Probenbild="polle-im_01_09_17-20231216150003-pmon-00025-A231324-tiff.tif" Qualitaetsmass="0.036467340481699514" />
+  </Pollenliste>
+  <Pollenliste Lateinischer_Name_Pollenart="Alternaria">
+    <Polle x_Ortskoordinate="570" y_Ortskoordinate="50" z_Ortskoordinate="35" Probenbild="polle-im_01_10_10-20231216150003-pmon-00025-A231324-tiff.tif" Qualitaetsmass="0.03536576433738155" />
+    <Polle x_Ortskoordinate="766" y_Ortskoordinate="249" z_Ortskoordinate="35" Probenbild="polle-im_01_11_10-20231216150003-pmon-00025-A231324-tiff.tif" Qualitaetsmass="0.037720058785213686" />
+    <Polle x_Ortskoordinate="997" y_Ortskoordinate="451" z_Ortskoordinate="35" Probenbild="polle-im_01_13_17-20231216150003-pmon-00025-A231324-tiff.tif" Qualitaetsmass="0.036770400689827586" />
+  </Pollenliste>
+  <Pollenliste Lateinischer_Name_Pollenart="Fungus">
+    <Polle x_Ortskoordinate="238" y_Ortskoordinate="99" z_Ortskoordinate="35" Probenbild="polle-im_01_12_23-20231216150003-pmon-00025-A231324-tiff.tif" Qualitaetsmass="0.0363010740346551" />
+    <Polle x_Ortskoordinate="529" y_Ortskoordinate="693" z_Ortskoordinate="35" Probenbild="polle-im_01_13_07-20231216150003-pmon-00025-A231324-tiff.tif" Qualitaetsmass="0.035672544483665705" />
+  </Pollenliste>
+  <WMO-Stationsnummer>12345</WMO-Stationsnummer>
+  <Beginn_der_Funktionskontrolle>20231216150003</Beginn_der_Funktionskontrolle>
+  <Ende_der_Funktionskontrolle>20231216180003</Ende_der_Funktionskontrolle>
+  <Beginn_der_Probenahme>20231216150003</Beginn_der_Probenahme>
+  <Ende_der_Probenahme>20231216180003</Ende_der_Probenahme>
+</Analyse_Datensatz>
