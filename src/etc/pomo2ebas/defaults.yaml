@@ -1,4 +1,6 @@
 Config:
     timezone: "UTC"
     datalevel: "1.5"
-    projects: "<YOUR>"
+    projects: 
+    - "<YOURS_1>"
+    - "<YOURS_2>"
