@@ -8,6 +8,54 @@ import xml.etree.ElementTree as ElementTree
 from dateutil.parser import parse
 from .pollen import Pollen_Concentration
 import pytz
+import json
+from datetime import datetime
+
+
+
+
+class SylvaGeneric(object):
+    """Concrete implementation for Poleno monitor """
+
+    json_root = None
+
+    def __init__(self, json_input) -> None:
+        self.json_root = json.loads(json_input)
+
+    def timestamp_to_datetime(self, timestamp: int):
+        """Returns a given timestamp string as a datetime (for example datetime.datetime(2023, 9, 10, 3, 0, 3))."""
+        ts = datetime.fromtimestamp(timestamp)
+        return ts
+
+    def get_device_id(self) -> str:
+        return self.json_root['device']['id']
+
+    def get_device_serial(self) -> str:
+        if ('serial_number' in self.json_root['device']):
+            return self.json_root['device']['serial_number']
+        else:
+            return None
+
+    def get_predicted_pollen_list(self, station_pollen_list):
+        """Transforms whatevers comes from given io_wrapper to pollen list with measurments."""
+
+        start = int(self.json_root['start'])
+        end = int(self.json_root['end'])
+
+        pollen = {}
+
+        for detected_pollen in self.json_root['pollen']:
+            pollen_name = detected_pollen['name']
+            if pollen_name in station_pollen_list:
+                pollen[pollen_name] = Pollen_Concentration(float(detected_pollen['concentration']), float(detected_pollen['accuracy']))
+
+        d = {}
+        d["start"] = self.timestamp_to_datetime(start)
+        d["end"] = self.timestamp_to_datetime(end)
+        d["pollen"] = pollen
+
+        return d
+
 
 
 class BAA500(object):
@@ -15,14 +63,7 @@ class BAA500(object):
 
     xml_root = None
 
-    def __init__(self, io_wrapper) -> None:
-        xml = ""
-        for line in io_wrapper:
-            xml += line
-
-        if len(xml.strip()) == 0:
-            raise ValueError("Invalid input given.")
-
+    def __init__(self, xml) -> None:
         self.xml_root = ElementTree.fromstring(xml)
 
     def timestamp_to_datetime(self, timestamp: str):
@@ -70,6 +111,12 @@ class BAA500(object):
 
     def get_device_id(self) -> str:
         return self.xml_root.find("./WMO-Stationsnummer").text
+    
+    def get_device_serial(self) -> str:
+        if (self.xml_root.findall("./WMO-Stationsnummer1")):
+            return self.xml_root.find("./WMO-Stationsnummer").text
+        else:
+            return None
 
     def get_predicted_pollen_list(self, station_pollen_list):
         """Transforms whatevers comes from given io_wrapper to pollen list with measurments."""

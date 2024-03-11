@@ -6,8 +6,9 @@ The main section reads pollen predictions from xml and converts them to EbasNasa
 import sys
 import argparse
 
-from pomo2ebas import Stations, BAA500, Nas, Defaults
-from pomo2ebas import get_station_pollen_list_object,get_station_pollen_list,set_prediction_pollen_vlues
+from pomo2ebas import Stations, BAA500, Nas, Defaults, SylvaGeneric
+from pomo2ebas import get_station_pollen_list_object, get_station_pollen_list, set_prediction_pollen_vlues
+from pomo2ebas import is_json, red_input_lines
 
 parser = argparse.ArgumentParser(description="""Reads a POMO XML from STDIN and transform the contained data to EBAS BAS Nasa Ames file format which is written to STDOUT.""")
 
@@ -20,14 +21,26 @@ args = parser.parse_args()
 defaults = Defaults(config_file=args.defaultsConfig)
 stations = Stations(config_file=args.stationsConfig)
 
+input = red_input_lines(sys.stdin)
+
+if (is_json(input)):
+   #JSON
+   instrument = SylvaGeneric(input)
+else:
+   #XML
+   instrument = BAA500(input)
+
+
+
 # create objects
-baa500 = BAA500(sys.stdin)
 nas = Nas(timezone=defaults.get_default("Config", "timezone"), datalevel=defaults.get_default("Config", "datalevel"), projects=defaults.get_default("Config", "projects"))
 
 # load station from yaml
-station = stations.get_station_by_id(baa500.get_device_id())
+station = stations.get_station_by_id(instrument.get_device_id())
+station["instr_serial"] = instrument.get_device_serial()
+
 if (station is None):
-    raise Exception("Station with id {0} not found in configuration".format(baa500.get_device_id()))
+    raise Exception("Station with id {0} not found in configuration".format(instrument.get_device_id()))
 
 # load station pollen list from yaml
 pollen_list = station["pollens"]
@@ -36,7 +49,7 @@ pollen_list = station["pollens"]
 pollen_simple_list = get_station_pollen_list(pollen_list)
 
 # read station predictions from io_weapper (prompt or input)
-pollen_predicted_list = baa500.get_predicted_pollen_list(pollen_simple_list)
+pollen_predicted_list = instrument.get_predicted_pollen_list(pollen_simple_list)
 
 # convert pollen list into a list of pollen objects of type Pollen
 pollen_object_list = get_station_pollen_list_object(pollen_list)
@@ -48,7 +61,8 @@ nas.set_fileglobal_metadata(station)
 sample_times = [(pollen_predicted_list["start"], pollen_predicted_list["end"])]
 
 # Set the time axes and related metadata for the EbasNasaAmes file object.
-nas.set_time_axes(station, sample_times)
+device_model = type(instrument)
+nas.set_time_axes(station, sample_times, device_model)
 
 # set values of predicted pollen
 pollen_object_list = set_prediction_pollen_vlues(pollen_object_list, pollen_predicted_list["pollen"])

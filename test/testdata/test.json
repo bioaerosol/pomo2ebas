@@ -1,0 +1,25 @@
+{
+    "start": 1709294400,
+    "end": 1709298000,
+    "device": {
+        "id": "FIHELS-JUPITER-1",
+        "serial_number": "123"
+    },
+    "pollen": [
+        {
+            "name": "Abies",
+            "concentration": 5.9,
+            "accuracy": 0.89
+        },
+        {
+            "name": "Betula",
+            "concentration": 15.9,
+            "accuracy": 0.99
+        },
+        {
+            "name": "Olive1",
+            "concentration": 13.9,
+            "accuracy": 0.4
+        }
+    ]
+}
