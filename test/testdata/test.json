@@ -9,17 +9,17 @@
         {
             "name": "Abies",
             "concentration": 5.9,
-            "accuracy": 0.89
+            "uncertainty": 0.89
         },
         {
             "name": "Betula",
             "concentration": 15.9,
-            "accuracy": 0.99
+            "uncertainty": 0.99
         },
         {
             "name": "Olive1",
             "concentration": 13.9,
-            "accuracy": 0.4
+            "uncertainty": 0.4
         }
     ]
 }

@@ -47,7 +47,7 @@ class SylvaGeneric(object):
         for detected_pollen in self.json_root['pollen']:
             pollen_name = detected_pollen['name']
             if pollen_name in station_pollen_list:
-                pollen[pollen_name] = Pollen_Concentration(float(detected_pollen['concentration']), float(detected_pollen['accuracy']))
+                pollen[pollen_name] = Pollen_Concentration(float(detected_pollen['concentration']), float(detected_pollen['uncertainty']))
 
         d = {}
         d["start"] = self.timestamp_to_datetime(start)
@@ -130,7 +130,8 @@ class BAA500(object):
             pollen_name = konzentration.get("Lateinischer_Name_Pollenart")
             if pollen_name in station_pollen_list:
                 accuracy = self.measure_accuracy(pollen_name)
-                pollen[pollen_name] = Pollen_Concentration(float(konzentration.get("Pollenkonzentration")), accuracy)
+                uncertainty = 1 - accuracy
+                pollen[pollen_name] = Pollen_Concentration(float(konzentration.get("Pollenkonzentration")), uncertainty)
 
         d = {}
         d["start"] = self.timestamp_to_datetime(start.text)

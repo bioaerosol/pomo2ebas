@@ -6,55 +6,55 @@
     <Konzentrationsinformation Deutscher_Name_Pollenart="Sporen" Lateinischer_Name_Pollenart="Fungus" Pollenanzahl="39" Pollenkonzentration="114.2698"/>
   </Konzentrationsliste>
   <Pollenliste Lateinischer_Name_Pollenart="Taxus">
-    <Polle Probenbild="polle-im_01_09_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.69" x_Ortskoordinate="63" y_Ortskoordinate="697" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_09_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9969" x_Ortskoordinate="63" y_Ortskoordinate="697" z_Ortskoordinate="35"/>
   </Pollenliste>
   <Pollenliste Lateinischer_Name_Pollenart="Fraxinus">
-    <Polle Probenbild="polle-im_01_12_04-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="98.49" x_Ortskoordinate="294" y_Ortskoordinate="151" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_12_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.97" x_Ortskoordinate="244" y_Ortskoordinate="840" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_10_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.91" x_Ortskoordinate="914" y_Ortskoordinate="501" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_09_17-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.96" x_Ortskoordinate="137" y_Ortskoordinate="120" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_14_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="79.15" x_Ortskoordinate="142" y_Ortskoordinate="795" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_12_04-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9849" x_Ortskoordinate="294" y_Ortskoordinate="151" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_12_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9997" x_Ortskoordinate="244" y_Ortskoordinate="840" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9991" x_Ortskoordinate="914" y_Ortskoordinate="501" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_09_17-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9996" x_Ortskoordinate="137" y_Ortskoordinate="120" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_14_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.7915" x_Ortskoordinate="142" y_Ortskoordinate="795" z_Ortskoordinate="35"/>
   </Pollenliste>
   <Pollenliste Lateinischer_Name_Pollenart="Fungus">
-    <Polle Probenbild="polle-im_01_12_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="97.18" x_Ortskoordinate="858" y_Ortskoordinate="667" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_12_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="96.05" x_Ortskoordinate="72" y_Ortskoordinate="323" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_12_20-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="85.89" x_Ortskoordinate="1068" y_Ortskoordinate="207" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_12_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="98.99" x_Ortskoordinate="291" y_Ortskoordinate="513" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_12_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.91" x_Ortskoordinate="703" y_Ortskoordinate="520" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_12_23-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.96" x_Ortskoordinate="768" y_Ortskoordinate="500" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_11_20-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.64" x_Ortskoordinate="1195" y_Ortskoordinate="689" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_11_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.22" x_Ortskoordinate="502" y_Ortskoordinate="330" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_11_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="94.08" x_Ortskoordinate="432" y_Ortskoordinate="317" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_11_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="90.77" x_Ortskoordinate="708" y_Ortskoordinate="741" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_11_03-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.72" x_Ortskoordinate="637" y_Ortskoordinate="848" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_11_03-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.14" x_Ortskoordinate="124" y_Ortskoordinate="78" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_13_14-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.44" x_Ortskoordinate="504" y_Ortskoordinate="400" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_13_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="90.68" x_Ortskoordinate="1171" y_Ortskoordinate="605" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_13_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="82.46" x_Ortskoordinate="1155" y_Ortskoordinate="345" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_13_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.94" x_Ortskoordinate="1013" y_Ortskoordinate="194" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_10_22-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="98.68" x_Ortskoordinate="65" y_Ortskoordinate="53" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_10_18-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.96" x_Ortskoordinate="884" y_Ortskoordinate="193" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_10_18-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="83.94" x_Ortskoordinate="155" y_Ortskoordinate="891" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_10_17-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="98.71" x_Ortskoordinate="284" y_Ortskoordinate="350" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_10_17-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="96.31" x_Ortskoordinate="675" y_Ortskoordinate="146" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_10_13-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="98.07" x_Ortskoordinate="829" y_Ortskoordinate="518" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_10_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="98.47" x_Ortskoordinate="919" y_Ortskoordinate="816" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_10_04-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="83.20" x_Ortskoordinate="3" y_Ortskoordinate="21" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_13_04-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="72.05" x_Ortskoordinate="962" y_Ortskoordinate="267" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_14_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.99" x_Ortskoordinate="881" y_Ortskoordinate="798" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_14_19-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.39" x_Ortskoordinate="264" y_Ortskoordinate="410" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_09_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.89" x_Ortskoordinate="657" y_Ortskoordinate="68" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_09_17-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="97.48" x_Ortskoordinate="1091" y_Ortskoordinate="470" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_09_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="87.01" x_Ortskoordinate="354" y_Ortskoordinate="596" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_09_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="98.00" x_Ortskoordinate="250" y_Ortskoordinate="696" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_09_14-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.96" x_Ortskoordinate="503" y_Ortskoordinate="414" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_09_04-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.43" x_Ortskoordinate="837" y_Ortskoordinate="639" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_09_02-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="93.64" x_Ortskoordinate="886" y_Ortskoordinate="29" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_14_02-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="98.94" x_Ortskoordinate="895" y_Ortskoordinate="375" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_14_02-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.42" x_Ortskoordinate="896" y_Ortskoordinate="377" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_14_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.94" x_Ortskoordinate="183" y_Ortskoordinate="227" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_14_06-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="97.67" x_Ortskoordinate="914" y_Ortskoordinate="129" z_Ortskoordinate="35"/>
-    <Polle Probenbild="polle-im_01_14_10-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="99.65" x_Ortskoordinate="1074" y_Ortskoordinate="328" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_12_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9718" x_Ortskoordinate="858" y_Ortskoordinate="667" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_12_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9605" x_Ortskoordinate="72" y_Ortskoordinate="323" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_12_20-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.8589" x_Ortskoordinate="1068" y_Ortskoordinate="207" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_12_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9899" x_Ortskoordinate="291" y_Ortskoordinate="513" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_12_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9991" x_Ortskoordinate="703" y_Ortskoordinate="520" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_12_23-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9996" x_Ortskoordinate="768" y_Ortskoordinate="500" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_11_20-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9964" x_Ortskoordinate="1195" y_Ortskoordinate="689" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_11_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9922" x_Ortskoordinate="502" y_Ortskoordinate="330" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_11_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9408" x_Ortskoordinate="432" y_Ortskoordinate="317" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_11_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9077" x_Ortskoordinate="708" y_Ortskoordinate="741" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_11_03-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9972" x_Ortskoordinate="637" y_Ortskoordinate="848" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_11_03-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9914" x_Ortskoordinate="124" y_Ortskoordinate="78" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_13_14-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9944" x_Ortskoordinate="504" y_Ortskoordinate="400" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_13_16-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9068" x_Ortskoordinate="1171" y_Ortskoordinate="605" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_13_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.8246" x_Ortskoordinate="1155" y_Ortskoordinate="345" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_13_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9994" x_Ortskoordinate="1013" y_Ortskoordinate="194" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_22-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9868" x_Ortskoordinate="65" y_Ortskoordinate="53" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_18-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9996" x_Ortskoordinate="884" y_Ortskoordinate="193" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_18-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.8394" x_Ortskoordinate="155" y_Ortskoordinate="891" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_17-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9871" x_Ortskoordinate="284" y_Ortskoordinate="350" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_17-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9631" x_Ortskoordinate="675" y_Ortskoordinate="146" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_13-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9807" x_Ortskoordinate="829" y_Ortskoordinate="518" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9847" x_Ortskoordinate="919" y_Ortskoordinate="816" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_10_04-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.8320" x_Ortskoordinate="3" y_Ortskoordinate="21" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_13_04-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.7205" x_Ortskoordinate="962" y_Ortskoordinate="267" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_14_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9999" x_Ortskoordinate="881" y_Ortskoordinate="798" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_14_19-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9939" x_Ortskoordinate="264" y_Ortskoordinate="410" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_09_21-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9989" x_Ortskoordinate="657" y_Ortskoordinate="68" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_09_17-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9748" x_Ortskoordinate="1091" y_Ortskoordinate="470" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_09_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.8701" x_Ortskoordinate="354" y_Ortskoordinate="596" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_09_15-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9800" x_Ortskoordinate="250" y_Ortskoordinate="696" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_09_14-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9996" x_Ortskoordinate="503" y_Ortskoordinate="414" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_09_04-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9943" x_Ortskoordinate="837" y_Ortskoordinate="639" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_09_02-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9364" x_Ortskoordinate="886" y_Ortskoordinate="29" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_14_02-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9894" x_Ortskoordinate="895" y_Ortskoordinate="375" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_14_02-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9942" x_Ortskoordinate="896" y_Ortskoordinate="377" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_14_05-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9994" x_Ortskoordinate="183" y_Ortskoordinate="227" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_14_06-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9767" x_Ortskoordinate="914" y_Ortskoordinate="129" z_Ortskoordinate="35"/>
+    <Polle Probenbild="polle-im_01_14_10-20240102090002-pmon-00201-A238912-tiff.tif" Qualitaetsmass="0.9965" x_Ortskoordinate="1074" y_Ortskoordinate="328" z_Ortskoordinate="35"/>
   </Pollenliste>
   <WMO-Stationsnummer>12345</WMO-Stationsnummer>
   <Beginn_der_Funktionskontrolle>20240102090002</Beginn_der_Funktionskontrolle>

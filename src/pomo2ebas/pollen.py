@@ -9,9 +9,9 @@ class Pollen():
         self.uncertainty = uncertainty
 
 class Pollen_Concentration():
-    def __init__(self,concentration, accuracy):
+    def __init__(self,concentration, _uncertainty):
         self.concentration = concentration
-        self.accuracy = accuracy
+        self._uncertainty = _uncertainty
 
 def get_station_pollen_list_object(station_pollen_list):
     """
@@ -43,7 +43,7 @@ def set_prediction_pollen_vlues(pollen_object_list, pollen_predicted_list):
     for predicted_pollen in pollen_predicted_list:
         pollen_object_list[predicted_pollen].value = [pollen_predicted_list[predicted_pollen].concentration]
         pollen_object_list[predicted_pollen].flag = [[]]
-        pollen_object_list[predicted_pollen].uncertainty = (1 - pollen_predicted_list[predicted_pollen].accuracy) 
+        pollen_object_list[predicted_pollen].uncertainty = (pollen_predicted_list[predicted_pollen]._uncertainty) 
         #print(predicted_pollen, pollen_object_list[predicted_pollen].value,pollen_object_list[predicted_pollen].uncertainty)
         
 
