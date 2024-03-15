@@ -28,13 +28,15 @@ class SylvaGeneric(object):
         return ts
 
     def get_device_id(self) -> str:
-        return self.json_root['device']['id']
+        for device in self.json_root['device']:    
+            return device['id']
 
     def get_device_serial(self) -> str:
-        if ('serial_number' in self.json_root['device']):
-            return self.json_root['device']['serial_number']
-        else:
-            return None
+        for device in self.json_root['device']:
+            if ('serial_number' in device):
+                return device['serial_number']
+            else:
+                return None
 
     def get_predicted_pollen_list(self, station_pollen_list):
         """Transforms whatevers comes from given io_wrapper to pollen list with measurments."""

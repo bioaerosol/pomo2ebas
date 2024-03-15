@@ -1,10 +1,10 @@
 {
     "start": 1709294400,
     "end": 1709298000,
-    "device": {
+    "device": [{
         "id": "FIHELS-JUPITER-1",
         "serial_number": "123"
-    },
+    }],
     "pollen": [
         {
             "name": "Abies",
