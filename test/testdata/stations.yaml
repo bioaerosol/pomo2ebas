@@ -1,9 +1,8 @@
 stations:
     - station:
-        id: "00001"
+        id: "12345"
         station_code: "DE0203U"
-        lab_code: "DE60L"
-        
+        lab_code: "DE60L"        
         method: "POMOAI"
         instr_type: "pollen_monitor"
         instr_name: "DEUFS-BAA502-1"
