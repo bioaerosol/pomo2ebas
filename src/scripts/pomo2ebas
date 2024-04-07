@@ -8,7 +8,7 @@ import argparse
 
 from pomo2ebas import Stations, BAA500, Nas, Defaults, SylvaGeneric
 from pomo2ebas import get_station_pollen_list_object, get_station_pollen_list, set_prediction_pollen_vlues
-from pomo2ebas import is_json, red_input_lines
+from pomo2ebas import is_json, read_input_lines
 
 parser = argparse.ArgumentParser(description="""Reads a POMO XML from STDIN and transform the contained data to EBAS BAS Nasa Ames file format which is written to STDOUT.""")
 
@@ -21,7 +21,7 @@ args = parser.parse_args()
 defaults = Defaults(config_file=args.defaultsConfig)
 stations = Stations(config_file=args.stationsConfig)
 
-input = red_input_lines(sys.stdin)
+input = read_input_lines(sys.stdin)
 
 if (is_json(input)):
    #JSON

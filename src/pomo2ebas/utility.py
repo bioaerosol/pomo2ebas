@@ -2,7 +2,7 @@
 import json
 
 
-def red_input_lines(io_wrapper):
+def read_input_lines(io_wrapper):
     content = ""
     for line in io_wrapper:
         content += line

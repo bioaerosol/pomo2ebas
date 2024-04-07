@@ -15,7 +15,7 @@ from datetime import datetime
 
 
 class SylvaGeneric(object):
-    """Concrete implementation for Poleno monitor """
+    """Concrete implementation for SYLVA generic monitor """
 
     json_root = None
 
@@ -114,7 +114,7 @@ class BAA500(object):
         return self.xml_root.find("./WMO-Stationsnummer").text
     
     def get_device_serial(self) -> str:
-        if (self.xml_root.findall("./WMO-Stationsnummer1")):
+        if (self.xml_root.findall("./WMO-Stationsnummer")):
             return self.xml_root.find("./WMO-Stationsnummer").text
         else:
             return None
