@@ -114,8 +114,8 @@ class BAA500(object):
         return self.xml_root.find("./WMO-Stationsnummer").text
     
     def get_device_serial(self) -> str:
-        if (self.xml_root.findall("./WMO-Stationsnummer")):
-            return self.xml_root.find("./WMO-Stationsnummer").text
+        if (self.xml_root.findall("./Seriennummer")):
+            return self.xml_root.find("./Seriennummer").text
         else:
             return None
 

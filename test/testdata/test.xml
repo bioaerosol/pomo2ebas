@@ -94,6 +94,7 @@
   <Version_ISYS>8.8.8</Version_ISYS>
   <Anzahl_Partikel>2261</Anzahl_Partikel>
   <Device>SYLVA_Cordoba</Device>
+  <Seriennummer>10006000</Seriennummer>
   <Name_SW>PomoAI</Name_SW>
   <Version_PomoAI>v1.32.0.1</Version_PomoAI>
   <Version_Segmentierer>v0.3.0</Version_Segmentierer>
