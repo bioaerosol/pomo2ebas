@@ -1,4 +1,4 @@
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 from .stations import Stations
 from .monitors import BAA500, SylvaGeneric

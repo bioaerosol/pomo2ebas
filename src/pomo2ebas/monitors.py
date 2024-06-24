@@ -37,6 +37,12 @@ class SylvaGeneric(object):
         else:
             return None
 
+    def get_software_version(self) -> str:
+        if ('software_version' in self.json_root['device']):
+            return self.json_root['device']['software_version']
+        else:
+            return None
+
     def get_predicted_pollen_list(self, station_pollen_list):
         """Transforms whatevers comes from given io_wrapper to pollen list with measurments."""
 
@@ -118,6 +124,12 @@ class BAA500(object):
             return self.xml_root.find("./Seriennummer").text
         else:
             return None
+
+    def get_software_version(self) -> str:
+        if (self.xml_root.findall("./Version_PomoAI")):
+            return self.xml_root.find("./Version_PomoAI").text
+        else:
+            return "1.46.13981"
 
     def get_predicted_pollen_list(self, station_pollen_list):
         """Transforms whatevers comes from given io_wrapper to pollen list with measurments."""

@@ -35,9 +35,10 @@ else:
 # create objects
 nas = Nas(timezone=defaults.get_default("Config", "timezone"), datalevel=defaults.get_default("Config", "datalevel"), projects=defaults.get_default("Config", "projects"))
 
-# load station from yaml
+# load station settings
 station = stations.get_station_by_id(instrument.get_device_id())
 station["instr_serial"] = instrument.get_device_serial()
+station["revdesc"] = instrument.get_software_version()
 
 if (station is None):
     raise Exception("Station with id {0} not found in configuration".format(instrument.get_device_id()))

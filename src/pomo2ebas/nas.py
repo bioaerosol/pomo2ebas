@@ -24,7 +24,8 @@ class Nas(object):
         Returns:
             resiolution in hours
         """
-        if (device_model==type(BAA500)):
+
+        if (device_model.__name__ == BAA500.__name__) :
             total_sec = (end - start).total_seconds()
             total_min = (total_sec / 60)
          
@@ -34,11 +35,11 @@ class Nas(object):
             if (total_min > 240):
              return '{}h'.format(24) 
         else:
-            if (device_model==type(SylvaGeneric)):
+            if (device_model.__name__ == SylvaGeneric.__name__):
                 total_sec = (end - start).total_seconds()
                 total_min = (total_sec / 60)
                 total_hours = (total_min / 60)
-                return '{}h'.format(total_hours) 
+                return '{}h'.format(int(total_hours)) 
 
 
         return None        
@@ -142,7 +143,7 @@ class Nas(object):
         Returns:
             None
         """
-
+        
 
         # define start and end times for all samples
         self.nas.sample_times = sample_times
