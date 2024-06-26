@@ -211,7 +211,12 @@ class Nas(object):
 
             # uncertainty
             # Uncertainty is calculated this way if this uncertintay is related to the measurment value.
-            values = [x * pollen_list[pollen].uncertainty / 100.0 for x in pollen_list[pollen].value]
+            # SYLVA agreed that uncertainty will be delivered as missing (None) till we find out a decent measurement method
+            if (pollen_list[pollen].uncertainty == None):
+                values = [None for x in pollen_list[pollen].value]
+            else:
+                values = [x * pollen_list[pollen].uncertainty / 100.0 for x in pollen_list[pollen].value]
+            
             flags = pollen_list[pollen].flag
 
             metadata = DataObject()
