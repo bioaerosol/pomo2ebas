@@ -2,6 +2,7 @@ import datetime
 from nilutility.datatypes import DataObject
 from ebas.domain.basic_domain_logic.time_period import estimate_period_code, estimate_sample_duration_code
 from ebas.io.file.nasa_ames import EbasNasaAmes
+from pomo2ebas import BAA500, SylvaGeneric
 
 
 class Nas(object):
@@ -13,24 +14,34 @@ class Nas(object):
         self.projects = projects
         self.nas = EbasNasaAmes()
         
-    def estimate_resolution(self, start, end):
+    def estimate_resolution(self, start, end, device_model):
         """
         Estimates the resolution in hours.
-        We only estimate 3 and 24 hours for winter and summer time switching
+        BAA500 estimates 3 and 24 hours for winter and summer time switching
+        for Poleno we calculate it
         Parameters:
            start and end datetime
         Returns:
             resiolution in hours
         """
-        total_sec = (end - start).total_seconds()
-        total_min = (total_sec / 60)
+
+        if (device_model.__name__ == BAA500.__name__) :
+            total_sec = (end - start).total_seconds()
+            total_min = (total_sec / 60)
          
-        if (total_min <= 240):
-         return '{}h'.format(3)
+            if (total_min <= 240):
+             return '{}h'.format(3)
          
-        if (total_min > 240):
-         return '{}h'.format(24) 
-        
+            if (total_min > 240):
+             return '{}h'.format(24) 
+        else:
+            if (device_model.__name__ == SylvaGeneric.__name__):
+                total_sec = (end - start).total_seconds()
+                total_min = (total_sec / 60)
+                total_hours = (total_min / 60)
+                return '{}h'.format(int(total_hours)) 
+
+
         return None        
 
     def set_fileglobal_metadata(self, station):
@@ -60,6 +71,9 @@ class Nas(object):
         self.nas.metadata.lab_code = station["lab_code"]
         self.nas.metadata.method = station["method"]  # should start with lab code
         self.nas.metadata.instr_type = station["instr_type"]
+        self.nas.metadata.instr_serialno = station["instr_serial"]
+        self.nas.metadata.acknowledgements = station["acknowledgements"]
+
 
         # We must alter the name whenever we make significant modifications to our data intake. such as a novel processing algorithm.
         self.nas.metadata.instr_name = station["instr_name"]
@@ -120,7 +134,7 @@ class Nas(object):
                 )
             )
 
-    def set_time_axes(self, station, sample_times):
+    def set_time_axes(self, station, sample_times, device_model):
         """
         Set the time axes and related metadata for the EbasNasaAmes file object.
 
@@ -129,7 +143,7 @@ class Nas(object):
         Returns:
             None
         """
-
+        
 
         # define start and end times for all samples
         self.nas.sample_times = sample_times
@@ -164,7 +178,7 @@ class Nas(object):
         # In the NRT dataflow you create usually files with only one sample. In this case, the automatic calculation with estimate_resolution_code would result in an undefined resolution code (the algorithm makes only sense if there are many samples).
         # That’s why you’d need to hardcode the resolution (because you know that the next sample will start 3 hours later, ebas-io can not deduct this information from one single sample).
         
-        self.nas.metadata.resolution = self.estimate_resolution(sample_times[0][0],sample_times[-1][1])
+        self.nas.metadata.resolution = self.estimate_resolution(sample_times[0][0],sample_times[-1][1], device_model)
 
         # It's a good practice to use Jan 1st of the year of the first sample
         # endtime as the file reference date (zero point of time axes).
@@ -197,7 +211,12 @@ class Nas(object):
 
             # uncertainty
             # Uncertainty is calculated this way if this uncertintay is related to the measurment value.
-            values = [x * pollen_list[pollen].uncertainty / 100.0 for x in pollen_list[pollen].value]
+            # SYLVA agreed that uncertainty will be delivered as missing (None) till we find out a decent measurement method
+            if (pollen_list[pollen].uncertainty == None):
+                values = [None for x in pollen_list[pollen].value]
+            else:
+                values = [x * pollen_list[pollen].uncertainty / 100.0 for x in pollen_list[pollen].value]
+            
             flags = pollen_list[pollen].flag
 
             metadata = DataObject()

@@ -14,3 +14,5 @@ pomo2ebas_*.changes
 
 **/__pycache__/
 **/*.egg-info
+.vs/pomo2ebas/FileContentIndex/3809b887-8f4d-4f6b-a8ad-88e18e49ed03.vsidx
+/.vs

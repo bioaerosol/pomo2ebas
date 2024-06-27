@@ -8,6 +8,62 @@ import xml.etree.ElementTree as ElementTree
 from dateutil.parser import parse
 from .pollen import Pollen_Concentration
 import pytz
+import json
+from datetime import datetime
+
+
+
+class SylvaGeneric(object):
+    """Concrete implementation for SYLVA generic monitor """
+
+    json_root = None
+
+    def __init__(self, json_input) -> None:
+        self.json_root = json.loads(json_input)
+
+    def timestamp_to_datetime(self, timestamp: int):
+        """Returns a given timestamp string as a datetime (for example datetime.datetime(2023, 9, 10, 3, 0, 3))."""
+        ts = datetime.fromtimestamp(timestamp, pytz.timezone("UTC")).strftime("%Y-%m-%d %H:%M:%S")
+        ts = parse(ts)
+        return ts
+
+    def get_device_id(self) -> str:
+            return(self.json_root['device']['id'])
+            
+
+    def get_device_serial(self) -> str:
+        if ('serial_number' in self.json_root['device']):
+            return self.json_root['device']['serial_number']
+        else:
+            return None
+
+    def get_software_version(self) -> str:
+        if ('software_version' in self.json_root['device']):
+            return self.json_root['device']['software_version']
+        else:
+            return None
+
+    def get_predicted_pollen_list(self, station_pollen_list):
+        """Transforms whatevers comes from given io_wrapper to pollen list with measurments."""
+
+        start = int(self.json_root['start'])
+        end = int(self.json_root['end'])
+
+        pollen = {}
+
+        for detected_pollen in self.json_root['pollen']:
+            pollen_name = detected_pollen['name']
+            if pollen_name in station_pollen_list:
+                uncertanity = detected_pollen['uncertainty']
+                pollen[pollen_name] = Pollen_Concentration(float(detected_pollen['concentration']), float(uncertanity) if uncertanity is not None else None)
+
+        d = {}
+        d["start"] = self.timestamp_to_datetime(start)
+        d["end"] = self.timestamp_to_datetime(end)
+        d["pollen"] = pollen
+
+        return d
+
 
 
 class BAA500(object):
@@ -15,14 +71,7 @@ class BAA500(object):
 
     xml_root = None
 
-    def __init__(self, io_wrapper) -> None:
-        xml = ""
-        for line in io_wrapper:
-            xml += line
-
-        if len(xml.strip()) == 0:
-            raise ValueError("Invalid input given.")
-
+    def __init__(self, xml) -> None:
         self.xml_root = ElementTree.fromstring(xml)
 
     def timestamp_to_datetime(self, timestamp: str):
@@ -70,6 +119,18 @@ class BAA500(object):
 
     def get_device_id(self) -> str:
         return self.xml_root.find("./WMO-Stationsnummer").text
+    
+    def get_device_serial(self) -> str:
+        if (self.xml_root.findall("./Seriennummer")):
+            return self.xml_root.find("./Seriennummer").text
+        else:
+            return None
+
+    def get_software_version(self) -> str:
+        if (self.xml_root.findall("./Version_PomoAI")):
+            return self.xml_root.find("./Version_PomoAI").text
+        else:
+            return "1.46.13981"
 
     def get_predicted_pollen_list(self, station_pollen_list):
         """Transforms whatevers comes from given io_wrapper to pollen list with measurments."""
@@ -82,8 +143,11 @@ class BAA500(object):
         for konzentration in self.xml_root.findall("./Konzentrationsliste/Konzentrationsinformation"):
             pollen_name = konzentration.get("Lateinischer_Name_Pollenart")
             if pollen_name in station_pollen_list:
-                accuracy = self.measure_accuracy(pollen_name)
-                pollen[pollen_name] = Pollen_Concentration(float(konzentration.get("Pollenkonzentration")), accuracy)
+                #accuracy = self.measure_accuracy(pollen_name)
+                #uncertainty = 1 - accuracy
+                # SYLVA agreed that uncertainty will be delivered as missing (None)
+                uncertainty = None
+                pollen[pollen_name] = Pollen_Concentration(float(konzentration.get("Pollenkonzentration")), uncertainty)
 
         d = {}
         d["start"] = self.timestamp_to_datetime(start.text)
