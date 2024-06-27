@@ -13,7 +13,6 @@ from datetime import datetime
 
 
 
-
 class SylvaGeneric(object):
     """Concrete implementation for SYLVA generic monitor """
 
@@ -24,7 +23,8 @@ class SylvaGeneric(object):
 
     def timestamp_to_datetime(self, timestamp: int):
         """Returns a given timestamp string as a datetime (for example datetime.datetime(2023, 9, 10, 3, 0, 3))."""
-        ts = datetime.fromtimestamp(timestamp)
+        ts = datetime.fromtimestamp(timestamp, pytz.timezone("UTC")).strftime("%Y-%m-%d %H:%M:%S")
+        ts = parse(ts)
         return ts
 
     def get_device_id(self) -> str:
